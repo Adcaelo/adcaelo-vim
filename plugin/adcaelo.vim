@@ -37,7 +37,7 @@ endfunction
 """ Raccourcis Fx
 
 " Format JSON
-nmap <F5> :%!python -m json.tool
+nmap <F5> :%!python -m json.tool<CR>
 
 " ouvrir le prochain buffer dans un nouveau split
 map <F6> <ESC>:sp <bar> n<CR>
