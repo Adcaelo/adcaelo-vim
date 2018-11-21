@@ -33,3 +33,23 @@ function! AdcaeloMD()
     silent !pandoc % -o %.pdf
 
 endfunction
+
+""" Raccourcis Fx
+
+" Format JSON
+nmap <F5> :%!python -m json.tool
+
+" ouvrir le prochain buffer dans un nouveau split
+map <F6> <ESC>:sp <bar> n<CR>
+
+" Trouver le fichier actuel dans NERDTree
+nmap <F7> :NERDTreeFind<CR>
+
+" Afficher les tags
+nmap <F8> :TagbarToggle<CR>
+
+
+""" Configs
+
+" Ignore vendors and storage
+set wildignore+=*/vendor/*,*/node_modules/*
