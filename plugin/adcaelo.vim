@@ -2,7 +2,6 @@
 "
 """" autocmd BufNewFile,BufRead *.js call AdcaeloJS()
 """" autocmd BufNewFile,BufRead *.php call AdcaeloPHP()
-"""" autocmd BufNewFile,BufRead *.blade.php call AdcaeloBlade()
 """" autocmd BufNewFile,BufRead *.blade.php call AdcaeloJS()
 """" 
 """" 
@@ -12,11 +11,6 @@
 """" 
 """" endfunction
 """" 
-"""" function! AdcaeloPHP()
-"""" 
-""""     abbrev dd dd( );<Left><Left><Left><Left>
-"""" 
-"""" endfunction
 """" 
 """" function! AdcaeloBlade()
 """" 
@@ -24,6 +18,23 @@
 """" 
 """" endfunction
 
+
+
+autocmd BufNewFile,BufRead *.php call AdcaeloPHP()
+autocmd BufNewFile,BufRead *.blade.php call AdcaeloBlade()
+
+function! AdcaeloPHP()
+
+    abbrev dd dd);<Left><Left>
+    abbrev log \Illuminate\Support\Facades\Log::debug);<Left><Left>
+
+endfunction
+function! AdcaeloBlade()
+
+    abbrev dd {{ dd) }}<Left><Left><Left><Left>
+    abbrev log {{ \Illuminate\Support\Facades\Log::debug) }}<Left><Left><Left><Left>
+
+endfunction
 
 " Commande à l'écriture d'un fichier
 autocmd BufWritePost *.md call AdcaeloMD()
