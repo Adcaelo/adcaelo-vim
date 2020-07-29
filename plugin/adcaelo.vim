@@ -25,20 +25,20 @@ autocmd BufNewFile,BufRead *.blade.php call AdcaeloBlade()
 
 function! AdcaeloPHP()
 
-    abbrev dd dd);<Left><Left>
-    abbrev log \Illuminate\Support\Facades\Log::debug);<Left><Left>
+    abbrev auto_dd dd);<Left><Left>
+    abbrev auto_log \Illuminate\Support\Facades\Log::debug);<Left><Left>
 
 endfunction
 function! AdcaeloBlade()
 
-    abbrev dd {{ dd) }}<Left><Left><Left><Left>
-    abbrev log {{ \Illuminate\Support\Facades\Log::debug) }}<Left><Left><Left><Left>
+    abbrev auto_dd {{ dd) }}<Left><Left><Left><Left>
+    abbrev auto_log {{ \Illuminate\Support\Facades\Log::debug) }}<Left><Left><Left><Left>
 
 endfunction
 
-" Commande à l'écriture d'un fichier
-autocmd BufWritePost *.md call AdcaeloMD()
-
+""" " Commande à l'écriture d'un fichier
+autocmd BufWritePost *.pdf.md call AdcaeloMD()
+ 
 function! AdcaeloMD()
 
     silent !pandoc % -o %.pdf
@@ -55,9 +55,11 @@ map <F6> <ESC>:sp <bar> n<CR>
 
 " Trouver le fichier actuel dans NERDTree
 nmap <F7> :NERDTreeFind<CR>
+" Trouver le fichier actuel dans NERDTree
+nmap <F8> :NERDTreeToggle<CR>
 
 " Afficher les tags
-nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 
 
 """ Configs
