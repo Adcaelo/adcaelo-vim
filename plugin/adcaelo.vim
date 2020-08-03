@@ -47,6 +47,9 @@ endfunction
 
 """ Raccourcis Fx
 
+" Afficher Gblade
+nmap <F4> :Gblame<CR>
+
 " Format JSON
 nmap <F5> :%!python -m json.tool<CR>
 
